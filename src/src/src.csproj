@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RotatedLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -103,6 +106,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\song.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spongebob.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

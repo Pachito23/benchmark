@@ -1,6 +1,5 @@
 E:\git\benchmark\src\src\obj\Debug\src.csproj.AssemblyReference.cache
 E:\git\benchmark\src\src\obj\Debug\src.csproj.SuggestedBindingRedirects.cache
-E:\git\benchmark\src\src\obj\Debug\src.Form1.resources
 E:\git\benchmark\src\src\obj\Debug\src.Properties.Resources.resources
 E:\git\benchmark\src\src\obj\Debug\src.csproj.GenerateResource.cache
 E:\git\benchmark\src\src\obj\Debug\src.csproj.CoreCompileInputs.cache
@@ -9,3 +8,4 @@ E:\git\benchmark\src\src\bin\Debug\src.exe
 E:\git\benchmark\src\src\bin\Debug\src.pdb
 E:\git\benchmark\src\src\obj\Debug\src.exe
 E:\git\benchmark\src\src\obj\Debug\src.pdb
+E:\git\benchmark\src\src\obj\Debug\src.Form1.resources

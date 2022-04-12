@@ -60,6 +60,11 @@ namespace src
         {
             this.SetStyle(System.Windows.Forms.ControlStyles.AllPaintingInWmPaint, true);
 
+            this.Icon = Properties.Resources.spongebob;
+
+            this.TransparencyKey = Color.Turquoise;
+            this.BackColor = Color.Turquoise;
+
             tabControl1.Appearance = TabAppearance.Buttons;
             tabControl1.ItemSize = new System.Drawing.Size(0, 1);
             tabControl1.Multiline = true;
@@ -79,9 +84,10 @@ namespace src
             label2.BackColor = Color.Transparent;
             label2.Refresh();
 
-            label3.Parent = tabPage4;
-            label3.BackColor = Color.Transparent;
-            label3.Refresh();
+            rotatedLabelCS1.Parent = tabPage4;
+            rotatedLabelCS1.BackColor = Color.Transparent;
+            rotatedLabelCS1.Refresh();
+            rotatedLabelCS1.Angle = 30;
 
             System.IO.Stream str = Properties.Resources.song;
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
