@@ -92,5 +92,17 @@
   <ItemGroup>
     <None Include="Resources\ButtonHover.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\benchmark_bg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\patrick-computer.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\results_bg.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\song.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
