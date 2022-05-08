@@ -56,7 +56,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 10000;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // tabPage3
@@ -358,7 +358,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button7;
@@ -375,6 +374,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TabControl tabControl1;
         private RotatedLabelCS rotatedLabelCS1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

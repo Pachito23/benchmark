@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace src
-{
+namespace src {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -25,6 +26,12 @@ namespace src
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
+        }
+        
+        private void Clean()
+        {
+            if (File.Exists("results.txt"))
+                File.Delete("results.txt");
         }
 
         private void Button_Enter(object sender, EventArgs e)
@@ -89,6 +96,7 @@ namespace src
             rotatedLabelCS1.Refresh();
             rotatedLabelCS1.Angle = 30;
 
+            // play amazing Spungbob song
             System.IO.Stream str = Properties.Resources.song;
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
             snd.PlayLooping();
@@ -106,9 +114,9 @@ namespace src
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            Clean();
             tabControl1.SelectTab(2);
-            Random rnd = new Random();
-            rotatedLabelCS1.Text = "Score: " + (rnd.Next(4000) + 1000).ToString();
+            rotatedLabelCS1.Text = "Score: 0";
 
             // open benchmarking programs...
             timer1.Start(); // we're just mocking the opening of a program
@@ -123,8 +131,14 @@ namespace src
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            tabControl1.SelectTab(3);
-            timer1.Stop();
+            // do all this sh*t if the file is created
+            if (File.Exists("results.txt"))
+            {
+                string score = File.ReadAllText("results.txt");
+                rotatedLabelCS1.Text = "Score: " + score;
+                tabControl1.SelectTab(3);
+                timer1.Stop();
+            }
         }
 
         private void button7_Click(object sender, EventArgs e)
