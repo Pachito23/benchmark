@@ -107,6 +107,9 @@ namespace src
         private void button4_Click_1(object sender, EventArgs e)
         {
             tabControl1.SelectTab(2);
+            Random rnd = new Random();
+            rotatedLabelCS1.Text = "Score: " + (rnd.Next(4000) + 1000).ToString();
+
             // open benchmarking programs...
             timer1.Start(); // we're just mocking the opening of a program
         }
