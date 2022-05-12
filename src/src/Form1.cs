@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -119,6 +120,7 @@ namespace src {
             rotatedLabelCS1.Text = "Score: 0";
 
             // open benchmarking programs...
+            Process.Start("vectorAdd.exe");
             timer1.Start(); // we're just mocking the opening of a program
         }
 
@@ -131,7 +133,7 @@ namespace src {
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // do all this sh*t if the file is created
+            // do all this stuff if the file is created
             if (File.Exists("results.txt"))
             {
                 string score = File.ReadAllText("results.txt");

@@ -9,3 +9,14 @@ E:\git\benchmark\src\src\bin\Debug\src.pdb
 E:\git\benchmark\src\src\obj\Debug\src.exe
 E:\git\benchmark\src\src\obj\Debug\src.pdb
 E:\git\benchmark\src\src\obj\Debug\src.Form1.resources
+D:\co dump\benchmark\src\src\obj\Debug\src.exe
+D:\co dump\benchmark\src\src\obj\Debug\src.pdb
+D:\co dump\benchmark\src\src\obj\Debug\src.csproj.AssemblyReference.cache
+D:\co dump\benchmark\src\src\obj\Debug\src.csproj.SuggestedBindingRedirects.cache
+D:\co dump\benchmark\src\src\obj\Debug\src.Form1.resources
+D:\co dump\benchmark\src\src\obj\Debug\src.Properties.Resources.resources
+D:\co dump\benchmark\src\src\obj\Debug\src.csproj.GenerateResource.cache
+D:\co dump\benchmark\src\src\obj\Debug\src.csproj.CoreCompileInputs.cache
+D:\co dump\benchmark\src\src\bin\Debug\src.exe.config
+D:\co dump\benchmark\src\src\bin\Debug\src.exe
+D:\co dump\benchmark\src\src\bin\Debug\src.pdb

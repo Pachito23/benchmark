@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\ProgramData\NVIDIA Corporation\CUDA Samples\v11.6\cuda-samples-master\bin\win64\Debug\vectorAdd.exe</FullPath>
+      <FullPath>D:\co dump\benchmark\src\src\bin\win64\Debug\vectorAdd.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
