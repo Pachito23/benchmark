@@ -103,6 +103,16 @@ namespace src.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap imgbin_paper_scroll_parchment_png {
+            get {
+                object obj = ResourceManager.GetObject("imgbin_paper-scroll-parchment-png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap main_bg {
             get {
                 object obj = ResourceManager.GetObject("main_bg", resourceCulture);

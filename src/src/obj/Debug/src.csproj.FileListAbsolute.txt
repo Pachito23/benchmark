@@ -20,3 +20,16 @@ D:\co dump\benchmark\src\src\obj\Debug\src.csproj.CoreCompileInputs.cache
 D:\co dump\benchmark\src\src\bin\Debug\src.exe.config
 D:\co dump\benchmark\src\src\bin\Debug\src.exe
 D:\co dump\benchmark\src\src\bin\Debug\src.pdb
+E:\git\uebos\benchmark\src\src\bin\Debug\src.exe.config
+E:\git\uebos\benchmark\src\src\bin\Debug\src.exe
+E:\git\uebos\benchmark\src\src\bin\Debug\src.pdb
+E:\git\uebos\benchmark\src\src\obj\Debug\src.csproj.AssemblyReference.cache
+E:\git\uebos\benchmark\src\src\obj\Debug\src.csproj.SuggestedBindingRedirects.cache
+E:\git\uebos\benchmark\src\src\obj\Debug\src.Form1.resources
+E:\git\uebos\benchmark\src\src\obj\Debug\src.Properties.Resources.resources
+E:\git\uebos\benchmark\src\src\obj\Debug\src.csproj.GenerateResource.cache
+E:\git\uebos\benchmark\src\src\obj\Debug\src.csproj.CoreCompileInputs.cache
+E:\git\uebos\benchmark\src\src\obj\Debug\src.exe
+E:\git\uebos\benchmark\src\src\obj\Debug\src.pdb
+E:\git\uebos\benchmark\src\src\bin\Debug\MACTrackBarLib.dll
+E:\git\uebos\benchmark\src\src\obj\Debug\src.csproj.CopyComplete

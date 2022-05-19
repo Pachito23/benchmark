@@ -15,6 +15,11 @@ namespace src {
 
     public partial class Form1 : Form
     {
+        private bool music;
+        private System.Media.SoundPlayer snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.song);
+        private FileStream inputFile;
+        private int profile;
+
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +38,8 @@ namespace src {
         {
             if (File.Exists("results.txt"))
                 File.Delete("results.txt");
+            if (File.Exists("input.txt"))
+                File.Delete("input.txt");
         }
 
         private void Button_Enter(object sender, EventArgs e)
@@ -97,9 +104,26 @@ namespace src {
             rotatedLabelCS1.Refresh();
             rotatedLabelCS1.Angle = 30;
 
+            label3.Parent = panel1;
+            label3.BackColor = Color.Transparent;
+            label3.Refresh();
+
+            label4.Parent = panel2;
+            label4.BackColor = Color.Transparent;
+            label4.Refresh();
+            label4.AutoSize = false;
+            label4.TextAlign = ContentAlignment.TopCenter;
+            label4.Dock = DockStyle.Fill;
+            label4.Text = "Easy";
+
+            panel1.Parent = tabPage2;
+            panel1.BackColor = Color.Transparent;
+            panel1.Refresh();
+                
+            music = true;
+            profile = 0;
+
             // play amazing Spungbob song
-            System.IO.Stream str = Properties.Resources.song;
-            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
             snd.PlayLooping();
         }
 
@@ -118,6 +142,11 @@ namespace src {
             Clean();
             tabControl1.SelectTab(2);
             rotatedLabelCS1.Text = "Score: 0";
+
+            inputFile = File.Create("input.txt");
+            inputFile.Close();
+            File.WriteAllText("input.txt", profile.ToString());
+            inputFile.Close();
 
             // open benchmarking programs...
             Process.Start("vectorAdd.exe");
@@ -138,6 +167,10 @@ namespace src {
             {
                 string score = File.ReadAllText("results.txt");
                 rotatedLabelCS1.Text = "Score: " + score;
+
+                if (File.Exists("input.txt"))
+                    File.Delete("input.txt");
+
                 tabControl1.SelectTab(3);
                 timer1.Stop();
             }
@@ -151,6 +184,45 @@ namespace src {
         private void button3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (!music)
+            {
+                music = true;
+                button2.Text = "Music: Off";
+                snd.PlayLooping();
+            }
+            else
+            {
+                music = false;
+                button2.Text = "Music: On";
+                snd.Stop();
+            }
+        }
+
+        private void macTrackBar2_MouseDown(object sender, MouseEventArgs e)
+        {
+            macTrackBar2.TrackerColor = Color.OrangeRed;
+        }
+
+        private void macTrackBar2_MouseUp(object sender, MouseEventArgs e)
+        {
+            macTrackBar2.TrackerColor = Color.DarkOrange;
+        }
+
+        private void macTrackBar2_ValueChanged(object sender, decimal value)
+        {
+            if (macTrackBar2.Value == 0)
+                label4.Text = "Easy";
+            else if (macTrackBar2.Value == 1)
+                label4.Text = "Medium";
+            else if (macTrackBar2.Value == 2)
+                label4.Text = "Hard";
+            else if (macTrackBar2.Value == 3)
+                label4.Text = "Extreme";
+            profile = macTrackBar2.Value;
         }
     }
 }
