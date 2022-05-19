@@ -40,18 +40,25 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.rotatedLabelCS1 = new src.RotatedLabelCS();
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.rotatedLabelCS1 = new src.RotatedLabelCS();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -183,8 +190,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(177, 46);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Documentation";
+            this.button2.Text = "Music: Off";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
             this.button2.MouseEnter += new System.EventHandler(this.Button_Enter);
             this.button2.MouseLeave += new System.EventHandler(this.Button_Leave);
@@ -217,6 +225,7 @@
             // 
             this.tabPage2.BackgroundImage = global::src.Properties.Resources.benchmark_bg;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -226,6 +235,63 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::src.Properties.Resources.imgbin_paper_scroll_parchment_png;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.macTrackBar2);
+            this.panel1.Location = new System.Drawing.Point(460, 22);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(300, 97);
+            this.panel1.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(64, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(110, 19);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Select a profile";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(88, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 19);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Select a profile";
+            // 
+            // macTrackBar2
+            // 
+            this.macTrackBar2.BackColor = System.Drawing.Color.Transparent;
+            this.macTrackBar2.BorderColor = System.Drawing.Color.Transparent;
+            this.macTrackBar2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.macTrackBar2.ForeColor = System.Drawing.Color.Transparent;
+            this.macTrackBar2.IndentHeight = 6;
+            this.macTrackBar2.Location = new System.Drawing.Point(28, 29);
+            this.macTrackBar2.Maximum = 3;
+            this.macTrackBar2.Minimum = 0;
+            this.macTrackBar2.Name = "macTrackBar2";
+            this.macTrackBar2.Size = new System.Drawing.Size(242, 49);
+            this.macTrackBar2.TabIndex = 9;
+            this.macTrackBar2.TickColor = System.Drawing.Color.Black;
+            this.macTrackBar2.TickHeight = 4;
+            this.macTrackBar2.TrackerColor = System.Drawing.Color.DarkOrange;
+            this.macTrackBar2.TrackerSize = new System.Drawing.Size(16, 16);
+            this.macTrackBar2.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar2.TrackLineHeight = 3;
+            this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
+            this.macTrackBar2.Value = 0;
+            this.macTrackBar2.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar2_ValueChanged);
+            this.macTrackBar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.macTrackBar2_MouseDown);
+            this.macTrackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.macTrackBar2_MouseUp);
             // 
             // button5
             // 
@@ -288,17 +354,6 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // rotatedLabelCS1
-            // 
-            this.rotatedLabelCS1.Angle = 0;
-            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
-            this.rotatedLabelCS1.Name = "rotatedLabelCS1";
-            this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
-            this.rotatedLabelCS1.TabIndex = 7;
-            this.rotatedLabelCS1.Text = "Score: 1000";
-            this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -333,6 +388,25 @@
             this.button7.MouseLeave += new System.EventHandler(this.Button_Leave);
             this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Location = new System.Drawing.Point(28, 59);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(242, 35);
+            this.panel2.TabIndex = 13;
+            // 
+            // rotatedLabelCS1
+            // 
+            this.rotatedLabelCS1.Angle = 0;
+            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
+            this.rotatedLabelCS1.Name = "rotatedLabelCS1";
+            this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
+            this.rotatedLabelCS1.TabIndex = 7;
+            this.rotatedLabelCS1.Text = "Score: 1000";
+            this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -351,8 +425,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,6 +453,11 @@
         private System.Windows.Forms.TabControl tabControl1;
         private RotatedLabelCS rotatedLabelCS1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private XComponent.SliderBar.MACTrackBar macTrackBar2;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 
