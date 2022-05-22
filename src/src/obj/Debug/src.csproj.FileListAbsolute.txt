@@ -33,3 +33,5 @@ E:\git\uebos\benchmark\src\src\obj\Debug\src.exe
 E:\git\uebos\benchmark\src\src\obj\Debug\src.pdb
 E:\git\uebos\benchmark\src\src\bin\Debug\MACTrackBarLib.dll
 E:\git\uebos\benchmark\src\src\obj\Debug\src.csproj.CopyComplete
+E:\git\benchmark\src\src\bin\Debug\MACTrackBarLib.dll
+E:\git\benchmark\src\src\obj\Debug\src.csproj.CopyComplete

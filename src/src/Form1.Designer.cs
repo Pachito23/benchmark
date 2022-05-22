@@ -40,25 +40,24 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.macTrackBar2 = new XComponent.SliderBar.MACTrackBar();
+            this.optionHeader2 = new src.RotatedLabelCS();
+            this.optionLabel4 = new src.RotatedLabelCS();
+            this.optionLabel3 = new src.RotatedLabelCS();
+            this.optionHeader1 = new src.RotatedLabelCS();
+            this.optionLabel2 = new src.RotatedLabelCS();
+            this.optionLabel1 = new src.RotatedLabelCS();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.rotatedLabelCS1 = new src.RotatedLabelCS();
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.rotatedLabelCS1 = new src.RotatedLabelCS();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -223,9 +222,14 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackgroundImage = global::src.Properties.Resources.benchmark_bg;
+            this.tabPage2.BackgroundImage = global::src.Properties.Resources.WhatsApp_Image_2022_05_22_at_10_19_33_AM;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage2.Controls.Add(this.panel1);
+            this.tabPage2.Controls.Add(this.optionHeader2);
+            this.tabPage2.Controls.Add(this.optionLabel4);
+            this.tabPage2.Controls.Add(this.optionLabel3);
+            this.tabPage2.Controls.Add(this.optionHeader1);
+            this.tabPage2.Controls.Add(this.optionLabel2);
+            this.tabPage2.Controls.Add(this.optionLabel1);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -236,62 +240,95 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // optionHeader2
             // 
-            this.panel1.BackgroundImage = global::src.Properties.Resources.imgbin_paper_scroll_parchment_png;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.macTrackBar2);
-            this.panel1.Location = new System.Drawing.Point(460, 22);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(300, 97);
-            this.panel1.TabIndex = 13;
+            this.optionHeader2.Angle = 0;
+            this.optionHeader2.AutoSize = true;
+            this.optionHeader2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionHeader2.ForeColor = System.Drawing.Color.White;
+            this.optionHeader2.Location = new System.Drawing.Point(542, 173);
+            this.optionHeader2.Name = "optionHeader2";
+            this.optionHeader2.Size = new System.Drawing.Size(176, 17);
+            this.optionHeader2.TabIndex = 8;
+            this.optionHeader2.Text = "Processing Power";
+            this.optionHeader2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             // 
-            // label4
+            // optionLabel4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(64, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(110, 19);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Select a profile";
+            this.optionLabel4.Angle = 0;
+            this.optionLabel4.AutoSize = true;
+            this.optionLabel4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel4.ForeColor = System.Drawing.Color.White;
+            this.optionLabel4.Location = new System.Drawing.Point(572, 227);
+            this.optionLabel4.Name = "optionLabel4";
+            this.optionLabel4.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel4.TabIndex = 7;
+            this.optionLabel4.Text = "Multi-Threaded";
+            this.optionLabel4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel4.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel4.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel4.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
             // 
-            // label3
+            // optionLabel3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(88, 16);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 19);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Select a profile";
+            this.optionLabel3.Angle = 0;
+            this.optionLabel3.AutoSize = true;
+            this.optionLabel3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel3.ForeColor = System.Drawing.Color.White;
+            this.optionLabel3.Location = new System.Drawing.Point(573, 203);
+            this.optionLabel3.Name = "optionLabel3";
+            this.optionLabel3.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel3.TabIndex = 6;
+            this.optionLabel3.Text = "Single-Threaded";
+            this.optionLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel3.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel3.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel3.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
             // 
-            // macTrackBar2
+            // optionHeader1
             // 
-            this.macTrackBar2.BackColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.BorderColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.macTrackBar2.ForeColor = System.Drawing.Color.Transparent;
-            this.macTrackBar2.IndentHeight = 6;
-            this.macTrackBar2.Location = new System.Drawing.Point(28, 29);
-            this.macTrackBar2.Maximum = 3;
-            this.macTrackBar2.Minimum = 0;
-            this.macTrackBar2.Name = "macTrackBar2";
-            this.macTrackBar2.Size = new System.Drawing.Size(242, 49);
-            this.macTrackBar2.TabIndex = 9;
-            this.macTrackBar2.TickColor = System.Drawing.Color.Black;
-            this.macTrackBar2.TickHeight = 4;
-            this.macTrackBar2.TrackerColor = System.Drawing.Color.DarkOrange;
-            this.macTrackBar2.TrackerSize = new System.Drawing.Size(16, 16);
-            this.macTrackBar2.TrackLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar2.TrackLineHeight = 3;
-            this.macTrackBar2.TrackLineSelectedColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(93)))), ((int)(((byte)(90)))));
-            this.macTrackBar2.Value = 0;
-            this.macTrackBar2.ValueChanged += new XComponent.SliderBar.ValueChangedHandler(this.macTrackBar2_ValueChanged);
-            this.macTrackBar2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.macTrackBar2_MouseDown);
-            this.macTrackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.macTrackBar2_MouseUp);
+            this.optionHeader1.Angle = 0;
+            this.optionHeader1.AutoSize = true;
+            this.optionHeader1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionHeader1.ForeColor = System.Drawing.Color.White;
+            this.optionHeader1.Location = new System.Drawing.Point(553, 97);
+            this.optionHeader1.Name = "optionHeader1";
+            this.optionHeader1.Size = new System.Drawing.Size(176, 17);
+            this.optionHeader1.TabIndex = 5;
+            this.optionHeader1.Text = "Memory Allocation";
+            this.optionHeader1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // optionLabel2
+            // 
+            this.optionLabel2.Angle = 0;
+            this.optionLabel2.AutoSize = true;
+            this.optionLabel2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel2.ForeColor = System.Drawing.Color.White;
+            this.optionLabel2.Location = new System.Drawing.Point(583, 151);
+            this.optionLabel2.Name = "optionLabel2";
+            this.optionLabel2.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel2.TabIndex = 4;
+            this.optionLabel2.Text = "Multi-Threaded";
+            this.optionLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel2.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel2.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel2.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
+            // 
+            // optionLabel1
+            // 
+            this.optionLabel1.Angle = 0;
+            this.optionLabel1.AutoSize = true;
+            this.optionLabel1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel1.ForeColor = System.Drawing.Color.White;
+            this.optionLabel1.Location = new System.Drawing.Point(584, 127);
+            this.optionLabel1.Name = "optionLabel1";
+            this.optionLabel1.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel1.TabIndex = 3;
+            this.optionLabel1.Text = "Single-Threaded";
+            this.optionLabel1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel1.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel1.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel1.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
             // 
             // button5
             // 
@@ -354,6 +391,17 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // rotatedLabelCS1
+            // 
+            this.rotatedLabelCS1.Angle = 0;
+            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
+            this.rotatedLabelCS1.Name = "rotatedLabelCS1";
+            this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
+            this.rotatedLabelCS1.TabIndex = 7;
+            this.rotatedLabelCS1.Text = "Score: 1000";
+            this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -388,25 +436,6 @@
             this.button7.MouseLeave += new System.EventHandler(this.Button_Leave);
             this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(28, 59);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(242, 35);
-            this.panel2.TabIndex = 13;
-            // 
-            // rotatedLabelCS1
-            // 
-            this.rotatedLabelCS1.Angle = 0;
-            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
-            this.rotatedLabelCS1.Name = "rotatedLabelCS1";
-            this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
-            this.rotatedLabelCS1.TabIndex = 7;
-            this.rotatedLabelCS1.Text = "Score: 1000";
-            this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -425,12 +454,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -453,11 +479,12 @@
         private System.Windows.Forms.TabControl tabControl1;
         private RotatedLabelCS rotatedLabelCS1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private XComponent.SliderBar.MACTrackBar macTrackBar2;
-        private System.Windows.Forms.Panel panel2;
+        private RotatedLabelCS optionLabel1;
+        private RotatedLabelCS optionHeader1;
+        private RotatedLabelCS optionLabel2;
+        private RotatedLabelCS optionHeader2;
+        private RotatedLabelCS optionLabel4;
+        private RotatedLabelCS optionLabel3;
     }
 }
 

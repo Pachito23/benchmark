@@ -18,7 +18,7 @@ namespace src {
         private bool music;
         private System.Media.SoundPlayer snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.song);
         private FileStream inputFile;
-        private int profile;
+        private String selectedOption = null;
 
         public Form1()
         {
@@ -104,24 +104,38 @@ namespace src {
             rotatedLabelCS1.Refresh();
             rotatedLabelCS1.Angle = 30;
 
-            label3.Parent = panel1;
-            label3.BackColor = Color.Transparent;
-            label3.Refresh();
+            // option labels
+            optionHeader1.Parent = tabPage2;
+            optionHeader1.BackColor = Color.Transparent;
+            optionHeader1.Refresh();
+            optionHeader1.Angle = 8;            
+            
+            optionHeader2.Parent = tabPage2;
+            optionHeader2.BackColor = Color.Transparent;
+            optionHeader2.Refresh();
+            optionHeader2.Angle = 8;
 
-            label4.Parent = panel2;
-            label4.BackColor = Color.Transparent;
-            label4.Refresh();
-            label4.AutoSize = false;
-            label4.TextAlign = ContentAlignment.TopCenter;
-            label4.Dock = DockStyle.Fill;
-            label4.Text = "Easy";
+            optionLabel1.Parent = tabPage2;
+            optionLabel1.BackColor = Color.Transparent;
+            optionLabel1.Refresh();
+            optionLabel1.Angle = 8;
 
-            panel1.Parent = tabPage2;
-            panel1.BackColor = Color.Transparent;
-            panel1.Refresh();
-                
+            optionLabel2.Parent = tabPage2;
+            optionLabel2.BackColor = Color.Transparent;
+            optionLabel2.Refresh();
+            optionLabel2.Angle = 8;            
+            
+            optionLabel3.Parent = tabPage2;
+            optionLabel3.BackColor = Color.Transparent;
+            optionLabel3.Refresh();
+            optionLabel3.Angle = 8;            
+            
+            optionLabel4.Parent = tabPage2;
+            optionLabel4.BackColor = Color.Transparent;
+            optionLabel4.Refresh();
+            optionLabel4.Angle = 8;
+
             music = true;
-            profile = 0;
 
             // play amazing Spungbob song
             snd.PlayLooping();
@@ -139,18 +153,33 @@ namespace src {
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            Clean();
-            tabControl1.SelectTab(2);
-            rotatedLabelCS1.Text = "Score: 0";
+            if (selectedOption == null)
+            {
+                MessageBox.Show("You need to select an option!", "Benchmark");
+            }
+            else
+            {
+                Clean();
+                tabControl1.SelectTab(2);
+                rotatedLabelCS1.Text = "Score: 0";
 
-            inputFile = File.Create("input.txt");
-            inputFile.Close();
-            File.WriteAllText("input.txt", profile.ToString());
-            inputFile.Close();
+                inputFile = File.Create("input.txt");
+                inputFile.Close();
 
-            // open benchmarking programs...
-            Process.Start("vectorAdd.exe");
-            timer1.Start(); // we're just mocking the opening of a program
+                if (selectedOption == "optionLabel1" || selectedOption == "optionLabel3") // Single-Threaded
+                    File.WriteAllText("input.txt", "0");
+                else
+                    File.WriteAllText("input.txt", "1"); // Multi-Threaded
+                inputFile.Close();
+
+                // open benchmarking programs...
+                if (selectedOption == "optionLabel1" || selectedOption == "optionLabel2")
+                    Process.Start("vectorAdd.exe");
+                else
+                    Process.Start("matrixMul.exe");
+
+                timer1.Start();
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -163,9 +192,15 @@ namespace src {
         private void timer1_Tick(object sender, EventArgs e)
         {
             // do all this stuff if the file is created
-            if (File.Exists("results.txt"))
+            String outputName;
+            if (selectedOption == "optionLabel1" || selectedOption == "optionLabel2")
+                outputName = "results_vec_add.txt";
+            else
+                outputName = "results_matrix_mul.txt";
+
+            if (File.Exists(outputName))
             {
-                string score = File.ReadAllText("results.txt");
+                string score = File.ReadAllText(outputName);
                 rotatedLabelCS1.Text = "Score: " + score;
 
                 if (File.Exists("input.txt"))
@@ -202,27 +237,32 @@ namespace src {
             }
         }
 
-        private void macTrackBar2_MouseDown(object sender, MouseEventArgs e)
+        private void GreenMouseEnter(object sender, EventArgs e)
         {
-            macTrackBar2.TrackerColor = Color.OrangeRed;
+            if (selectedOption != ((RotatedLabelCS)sender).Name)
+                ((RotatedLabelCS)sender).ForeColor = Color.Lime;
         }
 
-        private void macTrackBar2_MouseUp(object sender, MouseEventArgs e)
+        private void WhiteMouseLeave(object sender, EventArgs e)
         {
-            macTrackBar2.TrackerColor = Color.DarkOrange;
+            if (selectedOption != ((RotatedLabelCS)sender).Name)
+                ((RotatedLabelCS)sender).ForeColor = Color.White;
         }
 
-        private void macTrackBar2_ValueChanged(object sender, decimal value)
+        private void SelectOption(object sender, EventArgs e)
         {
-            if (macTrackBar2.Value == 0)
-                label4.Text = "Easy";
-            else if (macTrackBar2.Value == 1)
-                label4.Text = "Medium";
-            else if (macTrackBar2.Value == 2)
-                label4.Text = "Hard";
-            else if (macTrackBar2.Value == 3)
-                label4.Text = "Extreme";
-            profile = macTrackBar2.Value;
+            selectedOption = ((RotatedLabelCS)sender).Name;
+
+            ((RotatedLabelCS)(sender)).ForeColor = Color.LimeGreen;
+
+            if (selectedOption != "optionLabel1")
+                optionLabel1.ForeColor = Color.White;
+            if (selectedOption != "optionLabel2")
+                optionLabel2.ForeColor= Color.White;
+            if (selectedOption != "optionLabel3")
+                optionLabel3.ForeColor = Color.White;
+            if (selectedOption != "optionLabel4")
+                optionLabel4.ForeColor = Color.White;
         }
     }
 }
