@@ -196,7 +196,7 @@ namespace src {
             if (selectedOption == "optionLabel1" || selectedOption == "optionLabel2")
                 outputName = "results_vec_add.txt";
             else
-                outputName = "results_matrix_mul.txt";
+                outputName = "results_matrix_mult.txt";
 
             if (File.Exists(outputName))
             {
