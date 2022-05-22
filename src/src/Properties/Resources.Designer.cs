@@ -63,6 +63,16 @@ namespace src.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _255px_Flag_of_Romania_svg {
+            get {
+                object obj = ResourceManager.GetObject("255px-Flag_of_Romania.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap benchmark_bg {
             get {
                 object obj = ResourceManager.GetObject("benchmark_bg", resourceCulture);
@@ -107,6 +117,15 @@ namespace src.Properties {
             get {
                 object obj = ResourceManager.GetObject("imgbin_paper-scroll-parchment-png", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream imn {
+            get {
+                return ResourceManager.GetStream("imn", resourceCulture);
             }
         }
         

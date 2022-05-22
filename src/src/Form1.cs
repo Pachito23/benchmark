@@ -280,5 +280,13 @@ namespace src {
             if (p != null)
                 p.Kill();
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.imn);
+            snd.PlayLooping();
+            button2.BackgroundImage = Properties.Resources.ButtonDown;
+            button2.Enabled = false;
+        }
     }
 }

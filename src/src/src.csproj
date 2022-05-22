@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mocking spongebob %281%29.ico" />
+    <None Include="Resources\playboi carti canta imnul romaniei %281%29.wav" />
+    <None Include="Resources\255px-Flag_of_Romania.svg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
