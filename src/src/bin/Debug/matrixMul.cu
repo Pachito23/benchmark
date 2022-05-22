@@ -63,6 +63,7 @@ int main()
     int multi_thread_test;
     FILE* fin = fopen("input.txt","r+");
     fscanf(fin,"%d",&multi_thread_test);
+	fclose(fin);
 
 	//multi_thread_test=1;
 
