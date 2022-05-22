@@ -217,6 +217,7 @@ namespace src {
 
                 tabControl1.SelectTab(3);
                 timer1.Stop();
+                p = null;
             }
         }
 
