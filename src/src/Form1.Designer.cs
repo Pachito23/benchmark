@@ -41,18 +41,18 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
             this.optionHeader2 = new src.RotatedLabelCS();
             this.optionLabel4 = new src.RotatedLabelCS();
             this.optionLabel3 = new src.RotatedLabelCS();
             this.optionHeader1 = new src.RotatedLabelCS();
             this.optionLabel2 = new src.RotatedLabelCS();
             this.optionLabel1 = new src.RotatedLabelCS();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.rotatedLabelCS1 = new src.RotatedLabelCS();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -241,101 +241,6 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::src.Properties.Resources.Button;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(22, 22);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 46);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Exit";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
-            this.button5.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.button5.MouseLeave += new System.EventHandler(this.Button_Leave);
-            this.button5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
-            // 
-            // button4
-            // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::src.Properties.Resources.Button;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(528, 347);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(232, 46);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Start Benchmark";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
-            this.button4.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.button4.MouseLeave += new System.EventHandler(this.Button_Leave);
-            this.button4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackgroundImage = global::src.Properties.Resources.results_bg;
-            this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabPage4.Controls.Add(this.rotatedLabelCS1);
-            this.tabPage4.Controls.Add(this.label2);
-            this.tabPage4.Controls.Add(this.button7);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(792, 424);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(298, 366);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(219, 40);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Results are in!";
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::src.Properties.Resources.Button;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(22, 22);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(239, 46);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "Save and Exit";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            this.button7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
-            this.button7.MouseEnter += new System.EventHandler(this.Button_Enter);
-            this.button7.MouseLeave += new System.EventHandler(this.Button_Leave);
-            this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
-            // 
             // optionHeader2
             // 
             this.optionHeader2.Angle = 0;
@@ -426,6 +331,67 @@
             this.optionLabel1.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
             this.optionLabel1.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = global::src.Properties.Resources.Button;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(22, 22);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(118, 46);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Exit";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
+            this.button5.MouseEnter += new System.EventHandler(this.Button_Enter);
+            this.button5.MouseLeave += new System.EventHandler(this.Button_Leave);
+            this.button5.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
+            // 
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImage = global::src.Properties.Resources.Button;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(528, 347);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(232, 46);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Start Benchmark";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
+            this.button4.MouseEnter += new System.EventHandler(this.Button_Enter);
+            this.button4.MouseLeave += new System.EventHandler(this.Button_Leave);
+            this.button4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackgroundImage = global::src.Properties.Resources.results_bg;
+            this.tabPage4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage4.Controls.Add(this.rotatedLabelCS1);
+            this.tabPage4.Controls.Add(this.label2);
+            this.tabPage4.Controls.Add(this.button7);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(792, 424);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // rotatedLabelCS1
             // 
             this.rotatedLabelCS1.Angle = 0;
@@ -436,6 +402,40 @@
             this.rotatedLabelCS1.TabIndex = 7;
             this.rotatedLabelCS1.Text = "Score: 1000";
             this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(298, 366);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(219, 40);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Results are in!";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImage = global::src.Properties.Resources.Button;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(22, 22);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(239, 46);
+            this.button7.TabIndex = 4;
+            this.button7.Text = "Save and Exit";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.button7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button_Down);
+            this.button7.MouseEnter += new System.EventHandler(this.Button_Enter);
+            this.button7.MouseLeave += new System.EventHandler(this.Button_Leave);
+            this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
             // 
             // Form1
             // 
@@ -449,6 +449,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Benchmark";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();

@@ -19,6 +19,7 @@ namespace src {
         private System.Media.SoundPlayer snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.song);
         private FileStream inputFile;
         private String selectedOption = null;
+        private Process p;
 
         public Form1()
         {
@@ -40,6 +41,10 @@ namespace src {
                 File.Delete("results.txt");
             if (File.Exists("input.txt"))
                 File.Delete("input.txt");
+            if (File.Exists("results_vec_add.txt"))
+                File.Delete("results_vec_add.txt");
+            if (File.Exists("results_matrix_mult.txt"))
+                File.Delete("results_matrix_mult.txt");
         }
 
         private void Button_Enter(object sender, EventArgs e)
@@ -173,10 +178,15 @@ namespace src {
                 inputFile.Close();
 
                 // open benchmarking programs...
+                p = new Process();
                 if (selectedOption == "optionLabel1" || selectedOption == "optionLabel2")
-                    Process.Start("vectorAdd.exe");
+                    p.StartInfo = new ProcessStartInfo("vectorAdd.exe");
                 else
-                    Process.Start("matrixMul.exe");
+                    p.StartInfo = new ProcessStartInfo("matrixMul.exe");
+                p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                p.Start();
 
                 timer1.Start();
             }
@@ -185,6 +195,8 @@ namespace src {
         private void button6_Click(object sender, EventArgs e)
         {
             // stop programs and stuff
+            p.Kill();
+            p = null;
             tabControl1.SelectTab(0);
             timer1.Stop();
         }
@@ -202,9 +214,6 @@ namespace src {
             {
                 string score = File.ReadAllText(outputName);
                 rotatedLabelCS1.Text = "Score: " + score;
-
-                if (File.Exists("input.txt"))
-                    File.Delete("input.txt");
 
                 tabControl1.SelectTab(3);
                 timer1.Stop();
@@ -263,6 +272,12 @@ namespace src {
                 optionLabel3.ForeColor = Color.White;
             if (selectedOption != "optionLabel4")
                 optionLabel4.ForeColor = Color.White;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (p != null)
+                p.Kill();
         }
     }
 }
