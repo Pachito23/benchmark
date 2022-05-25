@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button8 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -55,9 +56,11 @@
             this.rotatedLabelCS1 = new src.RotatedLabelCS();
             this.label2 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.ComputeMemAllocSingleScoreTimer = new System.Windows.Forms.Timer(this.components);
             this.ComputeMemAllocMultiScoreTimer = new System.Windows.Forms.Timer(this.components);
             this.ComputeProcPowerMultiTimer = new System.Windows.Forms.Timer(this.components);
+            this.SiuuTimer = new System.Windows.Forms.Timer(this.components);
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -137,6 +140,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -147,6 +151,7 @@
             // 
             this.tabPage1.BackgroundImage = global::src.Properties.Resources.main_bg;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.button8);
             this.tabPage1.Controls.Add(this.pictureBox2);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
@@ -158,6 +163,19 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(763, 6);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(21, 20);
+            this.button8.TabIndex = 4;
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // pictureBox2
             // 
@@ -430,12 +448,12 @@
             // rotatedLabelCS1
             // 
             this.rotatedLabelCS1.Angle = 0;
-            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
+            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rotatedLabelCS1.Location = new System.Drawing.Point(295, 137);
             this.rotatedLabelCS1.Name = "rotatedLabelCS1";
             this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
             this.rotatedLabelCS1.TabIndex = 7;
-            this.rotatedLabelCS1.Text = "Score: 1000";
+            this.rotatedLabelCS1.Text = "1000 Krabby Patties";
             this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label2
@@ -472,6 +490,17 @@
             this.button7.MouseLeave += new System.EventHandler(this.Button_Leave);
             this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.BackgroundImage = global::src.Properties.Resources.maxresdefault;
+            this.tabPage5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(792, 424);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // ComputeMemAllocSingleScoreTimer
             // 
             this.ComputeMemAllocSingleScoreTimer.Tick += new System.EventHandler(this.ComputeMemAllocSingleScoreTimer_Tick);
@@ -483,6 +512,11 @@
             // ComputeProcPowerMultiTimer
             // 
             this.ComputeProcPowerMultiTimer.Tick += new System.EventHandler(this.ComputeProcPowerMultiTimer_Tick);
+            // 
+            // SiuuTimer
+            // 
+            this.SiuuTimer.Interval = 2000;
+            this.SiuuTimer.Tick += new System.EventHandler(this.SiuuTimer_Tick);
             // 
             // Form1
             // 
@@ -541,6 +575,9 @@
         private System.Windows.Forms.Timer ComputeMemAllocSingleScoreTimer;
         private System.Windows.Forms.Timer ComputeMemAllocMultiScoreTimer;
         private System.Windows.Forms.Timer ComputeProcPowerMultiTimer;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Timer SiuuTimer;
+        private System.Windows.Forms.TabPage tabPage5;
     }
 }
 

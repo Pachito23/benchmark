@@ -142,6 +142,16 @@ namespace src.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap maxresdefault {
+            get {
+                object obj = ResourceManager.GetObject("maxresdefault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap patrick_computer {
             get {
                 object obj = ResourceManager.GetObject("patrick-computer", resourceCulture);
@@ -156,6 +166,15 @@ namespace src.Properties {
             get {
                 object obj = ResourceManager.GetObject("results_bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream siuu {
+            get {
+                return ResourceManager.GetStream("siuu", resourceCulture);
             }
         }
         

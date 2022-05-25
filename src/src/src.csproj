@@ -131,6 +131,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="mocking spongebob %281%29.ico" />
+    <None Include="Resources\maxresdefault.jpg" />
+    <None Include="Resources\X2Download.com - Siuuu! Cristiano Ronaldo - Sound Effect %28128 kbps%29.wav" />
     <None Include="Resources\WhatsApp Image 2022-05-25 at 12.20.47 PM.jpeg" />
     <None Include="Resources\playboi carti canta imnul romaniei %281%29.wav" />
     <None Include="Resources\255px-Flag_of_Romania.svg.png" />

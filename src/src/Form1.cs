@@ -128,6 +128,7 @@ namespace src {
             rotatedLabelCS1.BackColor = Color.Transparent;
             rotatedLabelCS1.Refresh();
             rotatedLabelCS1.Angle = 30;
+            rotatedLabelCS1.AutoSize = true;
 
             // option labels
             optionHeader1.Parent = tabPage2;
@@ -165,6 +166,10 @@ namespace src {
             optionLabel5.Refresh();
             optionLabel5.Angle = 8;
 
+            button8.Parent = tabPage1;
+            button8.BackColor = Color.Transparent;
+            button8.Refresh();
+
             music = true;
 
             // play amazing Spungbob song
@@ -194,7 +199,7 @@ namespace src {
 
                 if (selectedOption != "optionLabel5")
                 {
-                    rotatedLabelCS1.Text = "Score: 0";
+                    rotatedLabelCS1.Text = "0 Krabby Patties";
 
                     inputFile = File.Create("input.txt");
                     inputFile.Close();
@@ -244,7 +249,7 @@ namespace src {
             if (File.Exists(outputName))
             {
                 string score = File.ReadAllText(outputName);
-                rotatedLabelCS1.Text = score;
+                rotatedLabelCS1.Text = score + " Krabby Patties";
                 tabControl1.SelectTab(3);
 
                 timer1.Stop();
@@ -356,12 +361,32 @@ namespace src {
                 ComputeMemAllocSingleScoreTimer.Stop();
                 p = null;
 
-                double StandardScore = (double)40000000 / ((double)(MemAllocSingleScore + 60 * ProcPowerMultiScore) / ((double)MemAllocSingleScore / (MemAllocMultiScore * 25)));
-                rotatedLabelCS1.Text = ((int)StandardScore).ToString();
+                double StandardScore = (double)5000000000 / (MemAllocSingleScore * 7 + MemAllocMultiScore * 250 * 6 + ProcPowerMultiScore * 87 * 5);
+                rotatedLabelCS1.Text = ((int)StandardScore).ToString() + " Krabby Patties";
 
                 Clean();
                 tabControl1.SelectTab(3);
             }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            snd.Stop();
+            tabControl1.SelectTab(4);
+            snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.siuu);
+            snd.Play();
+            SiuuTimer.Start();
+        }
+
+        private void SiuuTimer_Tick(object sender, EventArgs e)
+        {
+            snd.Stop();
+            tabControl1.SelectTab(0);
+            if (button2.Enabled == true)
+                snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.song);
+            else snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.imn);
+            snd.PlayLooping();
+            SiuuTimer.Stop();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
