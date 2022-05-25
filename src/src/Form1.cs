@@ -20,6 +20,7 @@ namespace src {
         private FileStream inputFile;
         private String selectedOption = null;
         private Process p;
+        private int MemAllocSingleScore, MemAllocMultiScore, ProcPowerMultiScore;
 
         public Form1()
         {
@@ -45,6 +46,25 @@ namespace src {
                 File.Delete("results_vec_add.txt");
             if (File.Exists("results_matrix_mult.txt"))
                 File.Delete("results_matrix_mult.txt");
+        }
+
+        private void ComputeStandardScore()
+        {
+            inputFile = File.Create("input.txt");
+            inputFile.Close();
+
+            File.WriteAllText("input.txt", "0");
+            inputFile.Close();
+
+            p = new Process();
+
+            p.StartInfo = new ProcessStartInfo("vectorAdd.exe");
+            p.StartInfo.CreateNoWindow = true;
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            p.Start();
+
+            ComputeMemAllocSingleScoreTimer.Start();
         }
 
         private void Button_Enter(object sender, EventArgs e)
@@ -140,6 +160,11 @@ namespace src {
             optionLabel4.Refresh();
             optionLabel4.Angle = 8;
 
+            optionLabel5.Parent = tabPage2;
+            optionLabel5.BackColor = Color.Transparent;
+            optionLabel5.Refresh();
+            optionLabel5.Angle = 8;
+
             music = true;
 
             // play amazing Spungbob song
@@ -166,31 +191,37 @@ namespace src {
             {
                 Clean();
                 tabControl1.SelectTab(2);
-                rotatedLabelCS1.Text = "Score: 0";
 
-                inputFile = File.Create("input.txt");
-                inputFile.Close();
+                if (selectedOption != "optionLabel5")
+                {
+                    rotatedLabelCS1.Text = "Score: 0";
 
-                if (selectedOption == "optionLabel1" || selectedOption == "optionLabel3") // Single-Threaded
-                    File.WriteAllText("input.txt", "0");
-                else
-                    File.WriteAllText("input.txt", "1"); // Multi-Threaded
-                inputFile.Close();
+                    inputFile = File.Create("input.txt");
+                    inputFile.Close();
 
-                // open benchmarking programs...
-                p = new Process();
-                if (selectedOption == "optionLabel1" || selectedOption == "optionLabel2")
-                    p.StartInfo = new ProcessStartInfo("vectorAdd.exe");
-                else
-                    p.StartInfo = new ProcessStartInfo("matrixMul.exe");
-                p.StartInfo.CreateNoWindow = true;
-                p.StartInfo.UseShellExecute = false;
-                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-                p.Start();
+                    if (selectedOption == "optionLabel1" || selectedOption == "optionLabel3") // Single-Threaded
+                        File.WriteAllText("input.txt", "0");
+                    else
+                        File.WriteAllText("input.txt", "1"); // Multi-Threaded
+                    inputFile.Close();
 
-                timer1.Start();
+                    // open benchmarking programs...
+                    p = new Process();
+                    if (selectedOption == "optionLabel1" || selectedOption == "optionLabel2")
+                        p.StartInfo = new ProcessStartInfo("vectorAdd.exe");
+                    else
+                        p.StartInfo = new ProcessStartInfo("matrixMul.exe");
+                    p.StartInfo.CreateNoWindow = true;
+                    p.StartInfo.UseShellExecute = false;
+                    p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                    p.Start();
+
+                    timer1.Start();
+                }
+                else ComputeStandardScore();
             }
         }
+
 
         private void button6_Click(object sender, EventArgs e)
         {
@@ -213,9 +244,9 @@ namespace src {
             if (File.Exists(outputName))
             {
                 string score = File.ReadAllText(outputName);
-                rotatedLabelCS1.Text = "Score: " + score;
-
+                rotatedLabelCS1.Text = score;
                 tabControl1.SelectTab(3);
+
                 timer1.Stop();
                 p = null;
             }
@@ -273,6 +304,8 @@ namespace src {
                 optionLabel3.ForeColor = Color.White;
             if (selectedOption != "optionLabel4")
                 optionLabel4.ForeColor = Color.White;
+            if (selectedOption != "optionLabel5")
+                optionLabel5.ForeColor = Color.White;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -281,12 +314,93 @@ namespace src {
                 p.Kill();
         }
 
+        private void ComputeMemAllocMultiScoreTimer_Tick(object sender, EventArgs e)
+        {
+            // do all this stuff if the file is created
+            if (File.Exists("results_vec_add.txt"))
+            {
+                string score = File.ReadAllText("results_vec_add.txt");
+                MemAllocMultiScore = Int32.Parse(score);
+
+                ComputeMemAllocMultiScoreTimer.Stop();
+                p = null;
+
+                Clean();
+
+                inputFile = File.Create("input.txt");
+                inputFile.Close();
+
+                File.WriteAllText("input.txt", "1");
+                inputFile.Close();
+
+                p = new Process();
+
+                p.StartInfo = new ProcessStartInfo("matrixMul.exe");
+                p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                p.Start();
+
+                ComputeProcPowerMultiTimer.Start();
+            }
+        }
+
+        private void ComputeProcPowerMultiTimer_Tick(object sender, EventArgs e)
+        {
+            // do all this stuff if the file is created
+            if (File.Exists("results_matrix_mult.txt"))
+            {
+                string score = File.ReadAllText("results_matrix_mult.txt");
+                ProcPowerMultiScore = Int32.Parse(score);
+
+                ComputeMemAllocSingleScoreTimer.Stop();
+                p = null;
+
+                double StandardScore = (double)40000000 / ((double)(MemAllocSingleScore + 60 * ProcPowerMultiScore) / ((double)MemAllocSingleScore / (MemAllocMultiScore * 25)));
+                rotatedLabelCS1.Text = ((int)StandardScore).ToString();
+
+                Clean();
+                tabControl1.SelectTab(3);
+            }
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             snd = new System.Media.SoundPlayer((System.IO.Stream)Properties.Resources.imn);
             snd.PlayLooping();
             button2.BackgroundImage = Properties.Resources.ButtonDown;
             button2.Enabled = false;
+        }
+
+        private void ComputeMemAllocSingleScoreTimer_Tick(object sender, EventArgs e)
+        {
+            // do all this stuff if the file is created
+            if (File.Exists("results_vec_add.txt"))
+            {
+                string score = File.ReadAllText("results_vec_add.txt");
+                MemAllocSingleScore = Int32.Parse(score);
+
+                ComputeMemAllocSingleScoreTimer.Stop();
+                p = null;
+
+                Clean();
+
+                inputFile = File.Create("input.txt");
+                inputFile.Close();
+
+                File.WriteAllText("input.txt", "1");
+                inputFile.Close();
+
+                p = new Process();
+
+                p.StartInfo = new ProcessStartInfo("vectorAdd.exe");
+                p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                p.Start();
+
+                ComputeMemAllocMultiScoreTimer.Start();
+            }
         }
     }
 }

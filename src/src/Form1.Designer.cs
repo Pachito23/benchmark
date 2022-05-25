@@ -42,18 +42,22 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.optionLabel5 = new src.RotatedLabelCS();
             this.optionHeader2 = new src.RotatedLabelCS();
             this.optionLabel4 = new src.RotatedLabelCS();
             this.optionLabel3 = new src.RotatedLabelCS();
             this.optionHeader1 = new src.RotatedLabelCS();
             this.optionLabel2 = new src.RotatedLabelCS();
             this.optionLabel1 = new src.RotatedLabelCS();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.rotatedLabelCS1 = new src.RotatedLabelCS();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.ComputeMemAllocSingleScoreTimer = new System.Windows.Forms.Timer(this.components);
+            this.ComputeMemAllocMultiScoreTimer = new System.Windows.Forms.Timer(this.components);
+            this.ComputeProcPowerMultiTimer = new System.Windows.Forms.Timer(this.components);
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -237,8 +241,9 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.BackgroundImage = global::src.Properties.Resources.WhatsApp_Image_2022_05_22_at_10_19_33_AM;
+            this.tabPage2.BackgroundImage = global::src.Properties.Resources.WhatsApp_Image_2022_05_25_at_12_20_47_PM;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.optionLabel5);
             this.tabPage2.Controls.Add(this.optionHeader2);
             this.tabPage2.Controls.Add(this.optionLabel4);
             this.tabPage2.Controls.Add(this.optionLabel3);
@@ -254,6 +259,112 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // optionLabel5
+            // 
+            this.optionLabel5.Angle = 0;
+            this.optionLabel5.AutoSize = true;
+            this.optionLabel5.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel5.ForeColor = System.Drawing.Color.White;
+            this.optionLabel5.Location = new System.Drawing.Point(562, 69);
+            this.optionLabel5.Name = "optionLabel5";
+            this.optionLabel5.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel5.TabIndex = 9;
+            this.optionLabel5.Text = "Standard Testing";
+            this.optionLabel5.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel5.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel5.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel5.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
+            // 
+            // optionHeader2
+            // 
+            this.optionHeader2.Angle = 0;
+            this.optionHeader2.AutoSize = true;
+            this.optionHeader2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionHeader2.ForeColor = System.Drawing.Color.White;
+            this.optionHeader2.Location = new System.Drawing.Point(537, 171);
+            this.optionHeader2.Name = "optionHeader2";
+            this.optionHeader2.Size = new System.Drawing.Size(176, 17);
+            this.optionHeader2.TabIndex = 8;
+            this.optionHeader2.Text = "Processing Power";
+            this.optionHeader2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // optionLabel4
+            // 
+            this.optionLabel4.Angle = 0;
+            this.optionLabel4.AutoSize = true;
+            this.optionLabel4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel4.ForeColor = System.Drawing.Color.White;
+            this.optionLabel4.Location = new System.Drawing.Point(567, 225);
+            this.optionLabel4.Name = "optionLabel4";
+            this.optionLabel4.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel4.TabIndex = 7;
+            this.optionLabel4.Text = "Multi-Threaded";
+            this.optionLabel4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel4.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel4.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel4.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
+            // 
+            // optionLabel3
+            // 
+            this.optionLabel3.Angle = 0;
+            this.optionLabel3.AutoSize = true;
+            this.optionLabel3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel3.ForeColor = System.Drawing.Color.White;
+            this.optionLabel3.Location = new System.Drawing.Point(568, 201);
+            this.optionLabel3.Name = "optionLabel3";
+            this.optionLabel3.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel3.TabIndex = 6;
+            this.optionLabel3.Text = "Single-Threaded";
+            this.optionLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel3.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel3.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel3.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
+            // 
+            // optionHeader1
+            // 
+            this.optionHeader1.Angle = 0;
+            this.optionHeader1.AutoSize = true;
+            this.optionHeader1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionHeader1.ForeColor = System.Drawing.Color.White;
+            this.optionHeader1.Location = new System.Drawing.Point(556, 95);
+            this.optionHeader1.Name = "optionHeader1";
+            this.optionHeader1.Size = new System.Drawing.Size(176, 17);
+            this.optionHeader1.TabIndex = 5;
+            this.optionHeader1.Text = "Memory Allocation";
+            this.optionHeader1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            // 
+            // optionLabel2
+            // 
+            this.optionLabel2.Angle = 0;
+            this.optionLabel2.AutoSize = true;
+            this.optionLabel2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel2.ForeColor = System.Drawing.Color.White;
+            this.optionLabel2.Location = new System.Drawing.Point(586, 149);
+            this.optionLabel2.Name = "optionLabel2";
+            this.optionLabel2.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel2.TabIndex = 4;
+            this.optionLabel2.Text = "Multi-Threaded";
+            this.optionLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel2.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel2.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel2.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
+            // 
+            // optionLabel1
+            // 
+            this.optionLabel1.Angle = 0;
+            this.optionLabel1.AutoSize = true;
+            this.optionLabel1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.optionLabel1.ForeColor = System.Drawing.Color.White;
+            this.optionLabel1.Location = new System.Drawing.Point(587, 125);
+            this.optionLabel1.Name = "optionLabel1";
+            this.optionLabel1.Size = new System.Drawing.Size(176, 27);
+            this.optionLabel1.TabIndex = 3;
+            this.optionLabel1.Text = "Single-Threaded";
+            this.optionLabel1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.optionLabel1.Click += new System.EventHandler(this.SelectOption);
+            this.optionLabel1.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
+            this.optionLabel1.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
             // 
             // button5
             // 
@@ -316,6 +427,17 @@
             this.tabPage4.Text = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // rotatedLabelCS1
+            // 
+            this.rotatedLabelCS1.Angle = 0;
+            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
+            this.rotatedLabelCS1.Name = "rotatedLabelCS1";
+            this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
+            this.rotatedLabelCS1.TabIndex = 7;
+            this.rotatedLabelCS1.Text = "Score: 1000";
+            this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -350,106 +472,17 @@
             this.button7.MouseLeave += new System.EventHandler(this.Button_Leave);
             this.button7.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button_Up);
             // 
-            // optionHeader2
+            // ComputeMemAllocSingleScoreTimer
             // 
-            this.optionHeader2.Angle = 0;
-            this.optionHeader2.AutoSize = true;
-            this.optionHeader2.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionHeader2.ForeColor = System.Drawing.Color.White;
-            this.optionHeader2.Location = new System.Drawing.Point(542, 173);
-            this.optionHeader2.Name = "optionHeader2";
-            this.optionHeader2.Size = new System.Drawing.Size(176, 17);
-            this.optionHeader2.TabIndex = 8;
-            this.optionHeader2.Text = "Processing Power";
-            this.optionHeader2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.ComputeMemAllocSingleScoreTimer.Tick += new System.EventHandler(this.ComputeMemAllocSingleScoreTimer_Tick);
             // 
-            // optionLabel4
+            // ComputeMemAllocMultiScoreTimer
             // 
-            this.optionLabel4.Angle = 0;
-            this.optionLabel4.AutoSize = true;
-            this.optionLabel4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel4.ForeColor = System.Drawing.Color.White;
-            this.optionLabel4.Location = new System.Drawing.Point(572, 227);
-            this.optionLabel4.Name = "optionLabel4";
-            this.optionLabel4.Size = new System.Drawing.Size(176, 27);
-            this.optionLabel4.TabIndex = 7;
-            this.optionLabel4.Text = "Multi-Threaded";
-            this.optionLabel4.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.optionLabel4.Click += new System.EventHandler(this.SelectOption);
-            this.optionLabel4.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
-            this.optionLabel4.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
+            this.ComputeMemAllocMultiScoreTimer.Tick += new System.EventHandler(this.ComputeMemAllocMultiScoreTimer_Tick);
             // 
-            // optionLabel3
+            // ComputeProcPowerMultiTimer
             // 
-            this.optionLabel3.Angle = 0;
-            this.optionLabel3.AutoSize = true;
-            this.optionLabel3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel3.ForeColor = System.Drawing.Color.White;
-            this.optionLabel3.Location = new System.Drawing.Point(573, 203);
-            this.optionLabel3.Name = "optionLabel3";
-            this.optionLabel3.Size = new System.Drawing.Size(176, 27);
-            this.optionLabel3.TabIndex = 6;
-            this.optionLabel3.Text = "Single-Threaded";
-            this.optionLabel3.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.optionLabel3.Click += new System.EventHandler(this.SelectOption);
-            this.optionLabel3.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
-            this.optionLabel3.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
-            // 
-            // optionHeader1
-            // 
-            this.optionHeader1.Angle = 0;
-            this.optionHeader1.AutoSize = true;
-            this.optionHeader1.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionHeader1.ForeColor = System.Drawing.Color.White;
-            this.optionHeader1.Location = new System.Drawing.Point(553, 97);
-            this.optionHeader1.Name = "optionHeader1";
-            this.optionHeader1.Size = new System.Drawing.Size(176, 17);
-            this.optionHeader1.TabIndex = 5;
-            this.optionHeader1.Text = "Memory Allocation";
-            this.optionHeader1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            // 
-            // optionLabel2
-            // 
-            this.optionLabel2.Angle = 0;
-            this.optionLabel2.AutoSize = true;
-            this.optionLabel2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel2.ForeColor = System.Drawing.Color.White;
-            this.optionLabel2.Location = new System.Drawing.Point(583, 151);
-            this.optionLabel2.Name = "optionLabel2";
-            this.optionLabel2.Size = new System.Drawing.Size(176, 27);
-            this.optionLabel2.TabIndex = 4;
-            this.optionLabel2.Text = "Multi-Threaded";
-            this.optionLabel2.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.optionLabel2.Click += new System.EventHandler(this.SelectOption);
-            this.optionLabel2.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
-            this.optionLabel2.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
-            // 
-            // optionLabel1
-            // 
-            this.optionLabel1.Angle = 0;
-            this.optionLabel1.AutoSize = true;
-            this.optionLabel1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.optionLabel1.ForeColor = System.Drawing.Color.White;
-            this.optionLabel1.Location = new System.Drawing.Point(584, 127);
-            this.optionLabel1.Name = "optionLabel1";
-            this.optionLabel1.Size = new System.Drawing.Size(176, 27);
-            this.optionLabel1.TabIndex = 3;
-            this.optionLabel1.Text = "Single-Threaded";
-            this.optionLabel1.TextAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.optionLabel1.Click += new System.EventHandler(this.SelectOption);
-            this.optionLabel1.MouseEnter += new System.EventHandler(this.GreenMouseEnter);
-            this.optionLabel1.MouseLeave += new System.EventHandler(this.WhiteMouseLeave);
-            // 
-            // rotatedLabelCS1
-            // 
-            this.rotatedLabelCS1.Angle = 0;
-            this.rotatedLabelCS1.Font = new System.Drawing.Font("Comic Sans MS", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rotatedLabelCS1.Location = new System.Drawing.Point(224, 141);
-            this.rotatedLabelCS1.Name = "rotatedLabelCS1";
-            this.rotatedLabelCS1.Size = new System.Drawing.Size(384, 150);
-            this.rotatedLabelCS1.TabIndex = 7;
-            this.rotatedLabelCS1.Text = "Score: 1000";
-            this.rotatedLabelCS1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.ComputeProcPowerMultiTimer.Tick += new System.EventHandler(this.ComputeProcPowerMultiTimer_Tick);
             // 
             // Form1
             // 
@@ -504,6 +537,10 @@
         private RotatedLabelCS optionLabel4;
         private RotatedLabelCS optionLabel3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private RotatedLabelCS optionLabel5;
+        private System.Windows.Forms.Timer ComputeMemAllocSingleScoreTimer;
+        private System.Windows.Forms.Timer ComputeMemAllocMultiScoreTimer;
+        private System.Windows.Forms.Timer ComputeProcPowerMultiTimer;
     }
 }
 

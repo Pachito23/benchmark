@@ -191,6 +191,16 @@ namespace src.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2022_05_25_at_12_20_47_PM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2022-05-25 at 12.20.47 PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Yellow {
             get {
                 object obj = ResourceManager.GetObject("Yellow", resourceCulture);
