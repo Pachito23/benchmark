@@ -317,6 +317,7 @@ namespace src {
         {
             if (p != null)
                 p.Kill();
+            Clean();
         }
 
         private void ComputeMemAllocMultiScoreTimer_Tick(object sender, EventArgs e)
