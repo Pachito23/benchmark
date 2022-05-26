@@ -260,6 +260,7 @@ namespace src {
         private void button7_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(0);
+            Clean();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -317,7 +318,6 @@ namespace src {
         {
             if (p != null)
                 p.Kill();
-            Clean();
         }
 
         private void ComputeMemAllocMultiScoreTimer_Tick(object sender, EventArgs e)
